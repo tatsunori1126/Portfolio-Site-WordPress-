@@ -1,0 +1,59 @@
+@charset "UTF-8";
+$pc: 1025px;    //パソコン
+$tab: 600px;    //タブレット
+
+// パソコン
+@mixin pc {
+    @media (min-width: ($pc)) {     //画面サイズが1025px以上の場合、pc画面になる
+        @content;
+    }
+}
+// タブレット
+@mixin tab {
+    @media (min-width: ($tab)) {    //画面サイズが600px〜1024pxの間の場合、タブレット画面になる
+        @content;
+    }
+}
+$font-color: #333333;
+.p-header {
+    display: flex;
+    align-items: center;
+    @include pc {
+        align-items: center;
+        justify-content: space-between;
+        background-color: #DDDCD2;
+        width: 100%;
+    }
+    &__title {
+        font-size: 20px;
+        margin-left: 30px;
+        @include pc {
+            font-size: 30px;
+        }
+        a {
+            color: $font-color;
+        }
+    }
+    &-nav {
+        display: none;
+        @include pc {
+            display: block;
+            height: 100%;
+        }
+        &__list {
+            height: 64px;
+            display: flex;
+            align-items: center;
+            &-title {
+                margin-right: 30px;
+                height: 100%;
+                line-height: 64px;
+                a {
+                    color: $font-color;
+                    display: inline-block;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

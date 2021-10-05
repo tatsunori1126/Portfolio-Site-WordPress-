@@ -1,0 +1,56 @@
+@charset "UTF-8";
+$pc: 1025px;    //パソコン
+$tab: 600px;    //タブレット
+
+// パソコン
+@mixin pc {
+    @media (min-width: ($pc)) {     //画面サイズが1025px以上の場合、pc画面になる
+        @content;
+    }
+}
+// タブレット
+@mixin tab {
+    @media (min-width: ($tab)) {    //画面サイズが600px〜1024pxの間の場合、タブレット画面になる
+        @content;
+    }
+}
+$tv-color: #FFFFFF;
+.p-main {
+    &__top-visual {
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        width: 100%;
+        background-image: url(/images/DSC02065b.jpg);
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 20px;
+        @include pc {
+            height: 600px;
+        }
+        .p-main__title-block {
+            color: $tv-color;
+            margin: 0 auto;
+            text-align: center;
+            @include pc {
+                text-align: inherit;
+                margin-right: 100px;
+            }
+            .p-main__top-title {
+                margin-bottom: 5px;
+                font-size: 16px;
+                @include pc {
+                    margin-bottom: 15px;
+                    font-size: 24px;
+                }
+            }
+            .p-main__top-text {
+                font-size: 14px;
+                @include pc {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

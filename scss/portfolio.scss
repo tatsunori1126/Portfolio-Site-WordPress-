@@ -2,26 +2,17 @@
    Foundation
    ========================================================================== */
 
-   @import "foundation/reset";
-   @import "foundation/base";
-   @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&display=swap');
-   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
-   @import "foundation/mixin";
+   @use "foundation/reset";
+   @use "foundation/base";
+   @use "foundation/mixin";
    
 /* ==========================================================================
    Layout
    ========================================================================== */
    
-   @import "layout/archive-main";
-   @import "layout/search-main";
-   @import "layout/container";
-   @import "layout/header";
-   @import "layout/main";
-   @import "layout/sidebar";
-   @import "layout/footer";
-   @import "layout/single-main";
-   @import "layout/page-main";
-   @import "layout/error-404-main";
+   @use "layout/header";
+   @use "layout/main";
+   @use "layout/footer";
 
 /* ==========================================================================
    Object
@@ -30,55 +21,17 @@
 /* Component
    ----------------------------------------------------------------- */
    
-   @import "object/component/button";
-   @import "object/component/form";
-   @import "object/component/error-404";
    
 /* Project
    ----------------------------------------------------------------- */
    
-   @import "object/project/access-visual";
-   @import "object/project/access";
-   @import "object/project/archive-main-heading-text";
-   @import "object/project/archive-main-visual";
-   @import "object/project/archive-top-main";
-   @import "object/project/archive-top-visual";
-   @import "object/project/arrow";
-   @import "object/project/branch-menu";
-   @import "object/project/footer-menu";
-   @import "object/project/header-sub";
-   @import "object/project/header-logo";
-   @import "object/project/main-visual";
-   @import "object/project/mask";
-   @import "object/project/responsive-menu-button";
-   @import "object/project/search-form";
-   @import "object/project/search-main-heading-text";
-   @import "object/project/search-main-visual";
-   @import "object/project/search-top-main";
-   @import "object/project/search-top-visual";
-   @import "object/project/side-menu";
-   @import "object/project/top-visual";
-   @import "object/project/single-top-visual";
-   @import "object/project/single-main-heading-text";
-   @import "object/project/single-main-visual";
-   @import "object/project/single-form";
-   @import "object/project/page-form";
-   @import "object/project/page-list-text";
-   @import "object/project/page-main-heading-text";
-   @import "object/project/page-main-visual";
-   @import "object/project/page-top-visual";
-   
+   @use "object/project/header-main";
+   @use "object/project/top-visual";
+   @use "object/project/top-main";
+   @use "object/project/footer-main";
+   @use "object/project/scroll";
+
 /* Utility
    ----------------------------------------------------------------- */
    
-   @import "object/utility/archive-margin";
-   @import "object/utility/archive-padding";
-   @import "object/utility/margin";
-   @import "object/utility/padding";
-   @import "object/utility/search-margin";
-   @import "object/utility/search-padding";
-   @import "object/utility/single-margin";
-   @import "object/utility/page-margin";
-   @import "object/utility/page-padding";
-   @import "object/utility/error-404-margin";
-   @import "object/utility/error-404-padding";
+   @use "object/utility/color";
