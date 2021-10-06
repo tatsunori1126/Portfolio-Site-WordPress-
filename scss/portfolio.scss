@@ -21,7 +21,8 @@
 /* Component
    ----------------------------------------------------------------- */
    
-   
+   @use "object/component/button";
+
 /* Project
    ----------------------------------------------------------------- */
    
@@ -30,6 +31,8 @@
    @use "object/project/top-main";
    @use "object/project/footer-main";
    @use "object/project/scroll";
+   @use "object/project/hamburger";
+   @use "object/project/loading";
 
 /* Utility
    ----------------------------------------------------------------- */

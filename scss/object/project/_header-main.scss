@@ -16,13 +16,16 @@ $tab: 600px;    //タブレット
 }
 $font-color: #333333;
 .p-header {
+    position: fixed;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    background-color: #DDDCD2;
+    width: 100%;
+    z-index: 100;
     @include pc {
         align-items: center;
         justify-content: space-between;
-        background-color: #DDDCD2;
-        width: 100%;
     }
     &__title {
         font-size: 20px;
@@ -45,14 +48,70 @@ $font-color: #333333;
             display: flex;
             align-items: center;
             &-title {
-                margin-right: 30px;
-                height: 100%;
-                line-height: 64px;
+                position: relative;
+                margin-right: 10px;
+                line-height: 24px;
                 a {
                     color: $font-color;
                     display: inline-block;
-                    height: 100%;
+                    padding: 10px;
                 }
+                a:hover {
+                    opacity: 0.6;
+                    transition: 0.3s;
+                }
+            }
+            &-title::before,
+            &-title::after {
+                content:"";
+                /*絶対配置で線の位置を決める*/
+                position: absolute;
+                /*線の形状*/
+                width: 0;
+                height:1px;
+                background:#333333;
+                /*アニメーションの指定*/
+                transition: all 0.15s linear;
+                transition-delay: 0.15s;
+            }
+            &-title::before {
+                right: 0;
+                top: 0;
+            }
+            &-title::after {
+                left: 0;
+                bottom: 0;
+            }
+            &-title span {
+                display: block;
+            }
+            &-title span::before,
+            &-title span::after {
+                content:"";
+                /*絶対配置で線の位置を決める*/
+                position: absolute;
+                /*線の形状*/
+                width:1px;
+                height:0;
+                background: #333333;
+                /*アニメーションの指定*/
+                transition: all 0.15s linear;
+            }
+            &-title span::before {
+                left: 0;
+                top: 0;
+            }
+            &-title span::after {
+                right: 0;
+                bottom: 0;
+            }
+            &-title:hover::before,
+            &-title:hover::after {
+                width: 100%;
+            }
+            &-title:hover span::before,
+            &-title:hover span::after {
+                height: 100%;
             }
         }
     }

@@ -26,8 +26,10 @@ $tv-color: #FFFFFF;
         background-position: center;
         background-size: cover;
         margin-bottom: 20px;
+        padding-top: 48px;
         @include pc {
             height: 600px;
+            padding-top: 64px;
         }
         .p-main__title-block {
             color: $tv-color;

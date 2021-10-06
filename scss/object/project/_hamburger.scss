@@ -1,0 +1,82 @@
+@charset "UTF-8";
+$pc: 1025px;    //パソコン
+$tab: 600px;    //タブレット
+
+// パソコン
+@mixin pc {
+    @media (min-width: ($pc)) {     //画面サイズが1025px以上の場合、pc画面になる
+        @content;
+    }
+}
+// タブレット
+@mixin tab {
+    @media (min-width: ($tab)) {    //画面サイズが600px〜1024pxの間の場合、タブレット画面になる
+        @content;
+    }
+}
+
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.p-hamburger-btn {
+    position: relative;/*ボタン内側の基点となるためrelativeを指定*/
+    background:#DDDCD2;
+    cursor: pointer;
+    width: 48px;
+    height:48px;
+    border-radius: 5px;
+    margin-right: 30px;
+    @include pc {
+        display: none;
+    }
+}
+
+/*ボタン内側*/
+
+.p-hamburger-btn {
+    .p-openbtn-area {
+        transition: all .4s;
+    }
+    span {
+        display: inline-block;
+        transition: all .4s;/*アニメーションの設定*/
+        position: absolute;
+        left: 14px;
+        height: 3px;
+        border-radius: 2px;
+        background: #333333;
+        width: 45%;
+    }
+    span:nth-of-type(1) {
+        top:15px; 
+    }
+    span:nth-of-type(2) {
+        top:23px;
+    }
+    span:nth-of-type(3) {
+        top:31px;
+    }
+}
+
+/*activeクラスが付与されると
+線と周りのエリアが回転して×になる*/
+
+.p-hamburger-btn.active .p-openbtn-area {
+    transform: rotateY(-360deg);
+}
+
+.p-hamburger-btn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 13px;
+    transform: translateY(6px) rotate(-135deg);
+    width: 50%;
+}
+
+.p-hamburger-btn.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.p-hamburger-btn.active span:nth-of-type(3){
+    top: 30px;
+    left: 13px;
+    transform: translateY(-6px) rotate(135deg);
+    width: 50%;
+}
