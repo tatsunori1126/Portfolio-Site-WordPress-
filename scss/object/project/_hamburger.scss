@@ -17,13 +17,13 @@ $tab: 600px;    //タブレット
 
 /*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
 .p-hamburger-btn {
-    position: relative;/*ボタン内側の基点となるためrelativeを指定*/
-    background:#DDDCD2;
+    position: fixed;
     cursor: pointer;
     width: 48px;
     height:48px;
+    right: 0;
     border-radius: 5px;
-    margin-right: 30px;
+    margin-right: 10px;
     @include pc {
         display: none;
     }
@@ -54,29 +54,4 @@ $tab: 600px;    //タブレット
     span:nth-of-type(3) {
         top:31px;
     }
-}
-
-/*activeクラスが付与されると
-線と周りのエリアが回転して×になる*/
-
-.p-hamburger-btn.active .p-openbtn-area {
-    transform: rotateY(-360deg);
-}
-
-.p-hamburger-btn.active span:nth-of-type(1) {
-    top: 18px;
-    left: 13px;
-    transform: translateY(6px) rotate(-135deg);
-    width: 50%;
-}
-
-.p-hamburger-btn.active span:nth-of-type(2) {
-    opacity: 0;
-}
-
-.p-hamburger-btn.active span:nth-of-type(3){
-    top: 30px;
-    left: 13px;
-    transform: translateY(-6px) rotate(135deg);
-    width: 50%;
 }

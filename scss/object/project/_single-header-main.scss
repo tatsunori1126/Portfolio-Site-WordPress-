@@ -15,7 +15,7 @@ $tab: 600px;    //タブレット
     }
 }
 $font-color: #333333;
-.p-header {
+.p-single-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -174,7 +174,7 @@ $font-color: #333333;
     }
 }
 
-.is-open {
+.is-single-open {
     left: 45%;
     @include tab {
         left: 55%;

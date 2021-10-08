@@ -14,20 +14,19 @@ $tab: 600px;    //タブレット
         @content;
     }
 }
-
-.c-button {
-    display: inline-block;
-    position: relative;
-    font-weight: normal;
-    border: 1px solid #000000;
-    border-radius: 20px;
-    cursor: pointer;
-    padding: 3px;
-    width: 20%;
-    @include tab {
-        padding: 8px;
+.p-single-main {
+    &__title {
+        @include pc {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333333;
+        }
     }
-    @include pc {
-        width: 15%;
+    .p-toppage__visual {
+        display: flex;
+        img {
+            width: 100%;
+            height: 100%;
+        }
     }
 }

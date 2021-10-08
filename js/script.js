@@ -1,5 +1,5 @@
 jQuery(function() {
-    
+
     //テキストのカウントアップ+バーの設定
     let bar = new ProgressBar.Line(splash_text, {//id名を指定
         easing: 'easeInOut',//アニメーション効果linear、easeIn、easeOut、easeInOutが指定可能
@@ -31,15 +31,30 @@ jQuery(function() {
     });  
 
     // ハンバーガーボタン
-    jQuery("#is-open").click(function () {
-        $(this).toggleClass('active');
+    jQuery('.p-hamburger-btn').click(function () {
+        jQuery('.p-header-nav').toggleClass('is-open');
+        jQuery('.p-mask').toggleClass("is-show");
+        jQuery('body').toggleClass('is-fixed');
     });
-    
+    //  Xボタン
+    jQuery('#is-close').click(function () {
+        jQuery('.p-header-nav').toggleClass('is-open');
+        jQuery('.p-mask').toggleClass("is-show");
+        jQuery('body').toggleClass('is-fixed');
+    });
+
     // リンクをクリックしたときにスクロール
     jQuery('#page-link a[href*="#"]').click(function () {
-        let elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
-        let pos = $(elmHash).offset().top-64;//idの上部の距離からHeaderの高さを引いた値を取得
-        $('body,html').animate({scrollTop: pos}, 800); //取得した位置にスクロール。500の数値が大きくなるほどゆっくりスクロール
-        return false;
+        if(window.matchMedia('(min-width: 1025px)').matches) {
+            let elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
+            let pos = $(elmHash).offset().top-64;//idの上部の距離からHeaderの高さを引いた値を取得
+            $('body,html').animate({scrollTop: pos}, 800); //取得した位置にスクロール。800の数値が大きくなるほどゆっくりスクロール
+            return false;
+        } else {
+            let elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
+            let pos = $(elmHash).offset().top;//idの上部の距離を取得
+            $('body,html').animate({scrollTop: pos}, 800); //取得した位置にスクロール。800の数値が大きくなるほどゆっくりスクロール
+            return false;
+        }
     });
 });

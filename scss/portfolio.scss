@@ -12,6 +12,7 @@
    
    @use "layout/header";
    @use "layout/main";
+   @use "layout/single-main";
    @use "layout/footer";
 
 /* ==========================================================================
@@ -33,6 +34,10 @@
    @use "object/project/scroll";
    @use "object/project/hamburger";
    @use "object/project/loading";
+   @use "object/project/close-btn";
+   @use "object/project/mask";
+   @use "object/project/single-top-main";
+   @use "object/project/single-header-main";
 
 /* Utility
    ----------------------------------------------------------------- */
