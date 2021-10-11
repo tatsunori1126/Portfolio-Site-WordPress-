@@ -27,7 +27,7 @@ jQuery(function() {
     });
     //アニメーションスタート
     bar.animate(1.0, function () {//バーを描画する割合を指定します 1.0 なら100%まで描画します
-        $("#splash").delay(500).fadeOut(800);//アニメーションが終わったら#splashエリアをフェードアウト
+        jQuery("#splash").delay(500).fadeOut(800);//アニメーションが終わったら#splashエリアをフェードアウト
     });  
 
     // ハンバーガーボタン
@@ -46,14 +46,14 @@ jQuery(function() {
     // リンクをクリックしたときにスクロール
     jQuery('#page-link a[href*="#"]').click(function () {
         if(window.matchMedia('(min-width: 1025px)').matches) {
-            let elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
-            let pos = $(elmHash).offset().top-64;//idの上部の距離からHeaderの高さを引いた値を取得
-            $('body,html').animate({scrollTop: pos}, 800); //取得した位置にスクロール。800の数値が大きくなるほどゆっくりスクロール
+            let elmHash = jQuery(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
+            let pos = jQuery(elmHash).offset().top-80;//idの上部の距離からHeaderの高さを引いた値を取得
+            jQuery('body,html').animate({scrollTop: pos}, 800); //取得した位置にスクロール。800の数値が大きくなるほどゆっくりスクロール
             return false;
         } else {
-            let elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
-            let pos = $(elmHash).offset().top;//idの上部の距離を取得
-            $('body,html').animate({scrollTop: pos}, 800); //取得した位置にスクロール。800の数値が大きくなるほどゆっくりスクロール
+            let elmHash = jQuery(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
+            let pos = jQuery(elmHash).offset().top-30;//idの上部の距離を取得
+            jQuery('body,html').animate({scrollTop: pos}, 800); //取得した位置にスクロール。800の数値が大きくなるほどゆっくりスクロール
             return false;
         }
     });

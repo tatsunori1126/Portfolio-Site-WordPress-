@@ -1,39 +1,7 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tatsunori's Portfolio Site</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/portfolio.css">
-    <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-</head>
-<body>
+<?php get_header(); ?>
     <div id="splash">
         <div id="splash_text"></div>
     </div>
-    <div class="p-mask"></div>
-    <header class="l-header p-header">
-        <h1 class="p-header__title"><a href="#">Tatsunori's Portfolio Site</a></h1>
-        <div class="p-hamburger-btn">
-            <div class="p-openbtn-area">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <nav class="p-header-nav">
-            <span class="close-btn" id="is-close"></span>
-            <ul class="p-header-nav__list" id="page-link">
-                <li class="p-header-nav__list-title"><a href="#"><span>Home</span></a></li>
-                <li class="p-header-nav__list-title"><a href="#aboutme"><span>AboutMe</span></a></li>
-                <li class="p-header-nav__list-title"><a href="#skills"><span>Skills</span></a></li>
-                <li class="p-header-nav__list-title"><a href="#works"><span>Works</span></a></li>
-                <li class="p-header-nav__list-title"><a href="#price"><span>Price</span></a></li>
-                <li class="p-header-nav__list-title"><a href="#contact"><span>Contact</span></a></li>
-            </ul>
-        </nav>
-    </header>
     <main class="l-main p-main">
         <div class="p-main__top-visual">
             <div class="p-main__title-block">
@@ -52,42 +20,42 @@
                         コーディングやWordPress制作をメインで受注しております。<br>
                         Twitterではこれまでの学習記録やWeb制作に関する情報などを発信しております。<br>
                         どうぞよろしくお願い致します。</p>
-                    <img src="images/IMG_2428.JPG">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/main-top-img.png">
                 </dib>
             </section>
             <section class="p-top-main__skills">
                 <h2 class="p-top-main__skills-title p-top-main__title-logo" id="skills">Skills</h2>
                 <dib class="p-top-main__skills-block">
                     <div class="p-top-main__skills-single-block">
-                        <img src="images/icons8-html-5-100.png" alt="HTMLの画像">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/icons8-html-5-100.png" alt="HTMLの画像">
                         <p>HTML</p>
                     </div>
                     <div class="p-top-main__skills-single-block">
-                        <img src="images/icons8-css3-100.png" alt="CSSの画像">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/icons8-css3-100.png" alt="CSSの画像">
                         <p>CSS</p>
                     </div>
                     <div class="p-top-main__skills-single-block">
-                        <img src="images/icons8-sass-100.png" alt="Sassの画像">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/icons8-sass-100.png" alt="Sassの画像">
                         <p>Sass</p>
                     </div>
                     <div class="p-top-main__skills-single-block">
-                        <img src="images/icons8-jquery-100.png" alt="jQueryの画像">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/icons8-jquery-100.png" alt="jQueryの画像">
                         <p>jQuery</p>
                     </div>
                     <div class="p-top-main__skills-single-block">
-                        <img src="images/icons8-ワードプレス-100.png" alt="WordPressの画像">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/icons8-ワードプレス-100.png" alt="WordPressの画像">
                         <p>WordPress</p>
                     </div>
                     <div class="p-top-main__skills-single-block">
-                        <img src="images/icons8-スマートフォンタブレット-100.png" alt="レスポンシブの画像">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/icons8-スマートフォンタブレット-100.png" alt="レスポンシブの画像">
                         <p>Responsive</p>
                     </div>
                     <div class="p-top-main__skills-single-block">
-                        <img src="images/icons8-github-100.png" alt="GitHubの画像">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/icons8-github-100.png" alt="GitHubの画像">
                         <p>GitHub</p>
                     </div>
                     <div class="p-top-main__skills-single-block">
-                        <img src="images/icons8-プログラミング-100.png" alt="FLOCSSの画像">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/icons8-プログラミング-100.png" alt="FLOCSSの画像">
                         <p>FLOCSS</p>
                     </div>
                 </dib>
@@ -99,22 +67,22 @@
             <section class="p-top-main__works">
                 <h2 class="p-top-main__works-title p-top-main__title-logo" id="works">Works</h2>
                 <div class="p-top-main__works-box">
+                    <?php
+                        if (have_posts() ) :
+                            while(have_posts() ) : the_post();
+                    ?>
                     <div class="p-top-main__works-block">
                         <div class="p-top-main__img-box">
-                            <a href="/single.html"><img src="images/スクリーンショット 2021-10-01 20.25.55.png" alt="RaiseTech公式サイト模写の画像"></a>
+                                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
                         </div>
                         <div class="p-top-main__works-text-block">
-                            <h3 class="p-top-main__works-text-title">RaiseTech公式サイト模写</h3>
+                            <h3 class="p-top-main__works-text-title"><?php the_title(); ?></h3>
                         </div>
                     </div>
-                    <div class="p-top-main__works-block">
-                        <div class="p-top-main__img-box">
-                            <a href="#"><img src="images/スクリーンショット 2021-10-01 20.24.43.png" alt="架空ハンバーガーサイト"></a>
-                        </div>
-                        <div class="p-top-main__works-text-block">
-                            <h3 class="p-top-main__works-text-title">架空ハンバーガーサイト</h3>
-                        </div>
-                    </div>
+                    <?php
+                            endwhile;
+                        endif;
+                    ?>
                 </div>
             </section>
             <section class="p-top-main__price">
@@ -162,16 +130,8 @@
             </section>
             <section class="p-top-main__contact">
                 <h2 class="p-top-main__contact-title p-top-main__title-logo" id="contact">Contact</h2>
-                <p>お問い合わせはこちらのフォームより承ります。<br>
-                    お仕事のご依頼やご相談などお気軽にお問い合わせ下さい。<br>
-                    必要事項をご記入の上、「送信する」ボタンを押して下さい。</p>
+                <?php echo apply_filters( 'the_content', get_page(13)->post_content ); ?>
             </section>
         </div>
     </main>
-    <footer class="l-footer p-footer">
-        <i class="fab fa-github"></i>
-        <p class="copyright">©︎Tatsunori Iwai 2021</p>
-    </footer>
-    <script type="text/javascript" src="js/script.js"></script>
-</body>
-</html>
+<?php get_footer(); ?>

@@ -66,110 +66,6 @@ $font-color: #333333;
                 align-items: center;
                 padding-top: 0;
             }
-            &-title {
-                position: relative;
-                margin-right: 10px;
-                line-height: 24px;
-                margin-bottom: 20px;
-                border-bottom: 1px solid #333333;
-                @include pc {
-                    margin-bottom: 0;
-                    border-bottom: none;
-                }
-                a {
-                    color: $font-color;
-                    display: inline-block;
-                    padding: 10px;
-                }
-                a:hover {
-                    opacity: 0.6;
-                    transition: 0.3s;
-                }
-            }
-            &-title::before,
-            &-title::after {
-                display: none;
-                @include pc {
-                    display: block;
-                    content:"";
-                    /*絶対配置で線の位置を決める*/
-                    position: absolute;
-                    /*線の形状*/
-                    width: 0;
-                    height:1px;
-                    background:#333333;
-                    /*アニメーションの指定*/
-                    transition: all 0.15s linear;
-                    transition-delay: 0.15s;
-                }
-            }
-            &-title::before {
-                display: none;
-                @include pc {
-                    display: block;
-                    right: 0;
-                    top: 0;
-                }
-            }
-            &-title::after {
-                display: none;
-                @include pc {
-                    display: block;
-                    left: 0;
-                    bottom: 0;
-                }
-            }
-            &-title span {
-                display: block;
-            }
-            &-title span::before,
-            &-title span::after {
-                display: none;
-                @include pc {
-                    display: block;
-                    content:"";
-                    /*絶対配置で線の位置を決める*/
-                    position: absolute;
-                    /*線の形状*/
-                    width:1px;
-                    height:0;
-                    background: #333333;
-                    /*アニメーションの指定*/
-                    transition: all 0.15s linear;
-                }
-            }
-            &-title span::before {
-                display: none;
-                @include pc {
-                    display: block;
-                    left: 0;
-                    top: 0;
-                }
-            }
-            &-title span::after {
-                display: none;
-                @include pc {
-                    display: block;
-                    right: 0;
-                    bottom: 0;
-                }
-            }
-            &-title:hover::before,
-            &-title:hover::after {
-                display: none;
-                @include pc {
-                    display: block;
-                    width: 100%;
-                }
-            }
-            &-title:hover span::before,
-            &-title:hover span::after {
-                display: none;
-                @include pc {
-                    display: block;
-                    height: 100%;
-                }
-            }
         }
     }
 }
@@ -178,5 +74,32 @@ $font-color: #333333;
     left: 45%;
     @include tab {
         left: 55%;
+    }
+}
+
+.p-single-header-nav__list {
+    .add-class {
+        ul {
+            @include pc {
+                display: flex;
+            }
+            li {
+                border-bottom: 1px solid #333333;
+                margin-bottom: 20px;
+                margin-right: 10px;
+                @include pc {
+                    border-bottom: none;
+                    margin-bottom: 0;
+                }
+                a {
+                    padding: 10px;
+                    color: #333333;
+                }
+                a:hover {
+                    opacity: 0.6;
+                    transition: 0.3s;
+                }
+            }
+        }
     }
 }
