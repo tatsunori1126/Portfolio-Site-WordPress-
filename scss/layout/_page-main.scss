@@ -1,11 +1,38 @@
 @charset "UTF-8";
+$pc: 1025px;    //パソコン
+$tab: 600px;    //タブレット
+
+// パソコン
+@mixin pc {
+    @media (min-width: ($pc)) {     //画面サイズが1025px以上の場合、pc画面になる
+        @content;
+    }
+}
+// タブレット
+@mixin tab {
+    @media (min-width: ($tab)) {    //画面サイズが600px〜1024pxの間の場合、タブレット画面になる
+        @content;
+    }
+}
+
 .page-top {
-    padding-top: 120px;
     width: 80%;
     margin: 0 auto;
+    @include tab {
+        padding-top: 60px;
+    }
+    @include pc {
+        padding-top: 120px;
+    }
     .page-title {
         margin: 50px auto 90px;
-        font-size: 36px;
+        font-size: 28px;
+        @include tab {
+            font-size: 30px;
+        }
+        @include pc {
+            font-size: 36px;
+        }
     }
     .contact-text {
         margin-bottom: 50px;

@@ -78,6 +78,9 @@
                         <div class="p-top-main__works-text-block">
                             <h3 class="p-top-main__works-text-title"><?php the_title(); ?></h3>
                         </div>
+                        <div class="p-top-main__works-detail-block">
+                            <a href="<?php the_permalink(); ?>">詳しく見る</a>
+                        </div>
                     </div>
                     <?php
                             endwhile;
