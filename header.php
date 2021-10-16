@@ -31,14 +31,6 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
-    <?php
-    $get_page_id = get_page_by_path( "contact" );   //Contactの固定ページのスラッグを$get_page_idに代入
-    // var_dump( $get_page_id );    //IDが返ってきているか確認するためのコード
-    if ( $get_page_id ) {
-        $get_page_id_contact = $get_page_id->ID;    //返ってきたIDを変数に入れて、その変数をget_page_link(この中に記述$get_page_id_takeout);
-    }
-    ?>
-
     <div class="p-mask"></div>
     <header class="l-header p-header">
         <h1 class="p-header__title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>

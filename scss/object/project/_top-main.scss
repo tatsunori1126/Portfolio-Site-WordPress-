@@ -30,6 +30,9 @@ $tab: 600px;    //タブレット
         @include pc {
             margin-bottom: 0;
         }
+        h2 {
+            font-family: 'Roboto', sans-serif;
+        }
         &-block {
             display: inherit;
             @include pc {
@@ -71,6 +74,9 @@ $tab: 600px;    //タブレット
         }
         @include pc {
             margin-bottom: 120px;
+        }
+        h2 {
+            font-family: 'Roboto', sans-serif;
         }
         &-block {
             display: inherit;
@@ -115,6 +121,9 @@ $tab: 600px;    //タブレット
         }
         @include pc {
             margin: 0 auto 120px;
+        }
+        h2 {
+            font-family: 'Roboto', sans-serif;
         }
         .p-top-main__works-box {
             display: inherit;
@@ -211,6 +220,9 @@ $tab: 600px;    //タブレット
         @include pc {
             margin-bottom: 120px;
         }
+        h2 {
+            font-family: 'Roboto', sans-serif;
+        }
         &-block {
             display: flex;
             justify-content: space-between;
@@ -227,6 +239,9 @@ $tab: 600px;    //タブレット
         @include tab {
             font-size: 16px;
         }
+        h2 {
+            font-family: 'Roboto', sans-serif;
+        }
     }
 }
 .p-top-main__title-logo {
@@ -236,4 +251,11 @@ $tab: 600px;    //タブレット
         font-size: 40px;
         margin-bottom: 50px;
     }
+}
+.yarpp-thumbnails-horizontal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 0 auto;
 }

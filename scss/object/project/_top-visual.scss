@@ -17,39 +17,70 @@ $tab: 600px;    //タブレット
 $tv-color: #FFFFFF;
 .p-main {
     &__top-visual {
-        height: 500px;
-        display: flex;
-        align-items: center;
-        justify-content: right;
+        position: relative;
         width: 100%;
         background-image: url(../images/top-visual.png);
         background-position: center;
         background-size: cover;
         margin-bottom: 20px;
-        @include pc {
-            height: 600px;
-            padding-top: 64px;
+        height: calc(100vh - 94px);
+        @include tab {
+            height: calc(100vh - 80px);
         }
-        .p-main__title-block {
-            color: $tv-color;
+        @include pc {
+            padding-top: 64px;
+            height: calc(100vh - 32px);
+        }
+        .background-mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.5);
+            width: 100%;
+            height: 100%;
+        }
+        .p-main__title-box {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            width: 100%;
             margin: 0 auto;
-            text-align: center;
+            height: calc(100vh - 48px);
             @include pc {
-                text-align: inherit;
-                margin-right: 100px;
+                height: calc(100vh - 64px);
             }
-            .p-main__top-title {
-                margin-bottom: 5px;
-                font-size: 16px;
-                @include pc {
-                    margin-bottom: 15px;
-                    font-size: 24px;
+            .p-main__title-block {
+                color: $tv-color;
+                text-align: center;
+                width: 100%;
+                margin: 0 auto;
+                opacity: 0.8;
+                .p-main__top-title {
+                    margin-bottom: 5px;
+                    font-size: 18px;
+                    letter-spacing: 3px;
+                    position: relative;
+                    @include tab {
+                        font-size: 24px;
+                        letter-spacing: 5px;
+                    }
+                    @include pc {
+                        margin-bottom: 15px;
+                        font-size: 36px;
+                        letter-spacing: 8px;
+                    }
                 }
-            }
-            .p-main__top-text {
-                font-size: 14px;
-                @include pc {
-                    font-size: 16px;
+                .p-main__top-text {
+                    font-size: 14px;
+                    font-family: 'Caveat', cursive;
+                    @include tab {
+                        font-size: 18px;
+                        letter-spacing: 2px;
+                    }
+                    @include pc {
+                        font-size: 24px;
+                        letter-spacing: 3px;
+                    }
                 }
             }
         }

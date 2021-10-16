@@ -16,6 +16,7 @@ $tab: 600px;    //タブレット
 }
 .l-header {
     height: 48px;
+    background-color: #EEEEEE;
     @include pc {
         height: 64px;
     }

@@ -1,6 +1,10 @@
 @charset "UTF-8";
 body {
-    background-color: #DDDCD2;
+    background-color: #EEEEEE;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'M PLUS 1p', sans-serif;
     &.is-fixed {
         overflow: hidden;
         &::before {

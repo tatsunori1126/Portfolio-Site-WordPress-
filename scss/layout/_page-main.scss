@@ -18,6 +18,7 @@ $tab: 600px;    //タブレット
 .page-top {
     width: 80%;
     margin: 0 auto;
+    min-height: 100vh;
     @include tab {
         padding-top: 60px;
     }

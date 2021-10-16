@@ -4,7 +4,6 @@
     add_theme_support( 'title-tag' );   //<title>タグを出力する
     add_theme_support( 'post-thumbnails' );     //アイキャッチ画像を扱えるようにする
     add_theme_support( 'automatic-feed-links' );
-    add_theme_support( 'menus' );
     add_theme_support( 'custom-background' );
     add_theme_support( 'custom-header' );
     add_theme_support( 'wp-block-styles' ); 
@@ -23,6 +22,9 @@
     add_filter( 'pre_get_document_title', 'portfolio_title' );
 
     function portfolio_script() {
+        wp_enqueue_style( ' add_google_fonts ', ' https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap', false );
+        wp_enqueue_style( ' add_google_fonts ', ' https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@700&display=swap', false );
+        wp_enqueue_style( ' add_google_fonts ', ' https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@700&family=Roboto:wght@700&display=swap', false );
         wp_enqueue_style( 'font-awesome', '//use.fontawesome.com/releases/v5.15.0/css/all.css' , array(), 'v5.15.0');
         wp_enqueue_style( 'portfolio', get_theme_file_uri (  '/css/portfolio.css' ), array(), '1.0.0' );
         wp_enqueue_script( 'loading', '//rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js', array(), '1.0.0');

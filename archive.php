@@ -18,5 +18,6 @@
                 endwhile;
             endif;
         ?>
+        <!-- <?php wp_link_pages( $args ); ?> -->
     </div>
 <?php get_footer(); ?>
