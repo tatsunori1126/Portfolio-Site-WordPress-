@@ -92,46 +92,42 @@
             </section>
             <section class="p-top-main__price">
                 <h2 class="p-top-main__price-title p-top-main__title-logo" id="price">Price</h2>
+                <h3 class="p-top-main__price-title-sub">■コーディング</h3>
                 <div class="p-top-main__price-block">
                     <p class="p-top-main__price-item">トップページ</p>
-                    <p class="p-top-main__price-amount">¥25,000円〜</p>
+                    <p class="p-top-main__price-amount">¥22,000〜</p>
                 </div>
                 <div class="p-top-main__price-block">
-                    <p class="p-top-main__price-item">下層ページ</p>
-                    <p class="p-top-main__price-amount">¥15,000円〜</p>
-                </div>
-                <div class="p-top-main__price-block">
-                    <p class="p-top-main__price-item">派生ページ</p>
-                    <p class="p-top-main__price-amount">¥10,000円〜</p>
+                    <p class="p-top-main__price-item">下層ページ（1ページ）</p>
+                    <p class="p-top-main__price-amount">¥16,500〜</p>
                 </div>
                 <div class="p-top-main__price-block">
                     <p class="p-top-main__price-item">ランディングページ</p>
-                    <p class="p-top-main__price-amount">¥40,000円〜</p>
+                    <p class="p-top-main__price-amount">¥55,000〜</p>
                 </div>
                 <div class="p-top-main__price-block">
-                    <p class="p-top-main__price-item">jQuery実装</p>
-                    <p class="p-top-main__price-amount">¥25,000円〜</p>
+                    <p class="p-top-main__price-item">レスポンシブ対応（1点）</p>
+                    <p class="p-top-main__price-amount">¥13,200〜</p>
+                </div>
+                <div class="p-top-main__price-block">
+                    <p class="p-top-main__price-item">jQueryの実装（1点）</p>
+                    <p class="p-top-main__price-amount">¥13,200〜</p>
                 </div>
                 <div class="p-top-main__price-block">
                     <p class="p-top-main__price-item">お問い合わせフォーム</p>
-                    <p class="p-top-main__price-amount">¥20,000円〜</p>
+                    <p class="p-top-main__price-amount">¥16,500〜</p>
                 </div>
-                <div class="p-top-main__price-block">
-                    <p class="p-top-main__price-item">レスポンシブ</p>
-                    <p class="p-top-main__price-amount">¥15,000円〜</p>
-                </div>
+                <h3 class="p-top-main__price-title-sub">■WordPressの構築</h3>
                 <div class="p-top-main__price-block">
                     <p class="p-top-main__price-item">WordPress化</p>
-                    <p class="p-top-main__price-amount">¥50,000円〜</p>
+                    <p class="p-top-main__price-amount">¥55,000〜</p>
                 </div>
+                <h3 class="p-top-main__price-title-sub">■サーバーの構築</h3>
                 <div class="p-top-main__price-block">
-                    <p class="p-top-main__price-item">サイト内検索フォーム</p>
-                    <p class="p-top-main__price-amount">¥15,000円〜</p>
+                    <p class="p-top-main__price-item">サーバーへのデプロイ</p>
+                    <p class="p-top-main__price-amount">¥11,000〜</p>
                 </div>
-                <div class="p-top-main__price-block">
-                    <p class="p-top-main__price-item">ハンバーガーメニュー</p>
-                    <p class="p-top-main__price-amount">¥15,000円〜</p>
-                </div>
+                <p class="caution-text">※料金はあくまで目安になります。<br>内容によって変動しますのでまずは気軽にご相談下さい。<br>尚、料金は全て税込価格となっております。
             </section>
             <?php
                 $get_page_id = get_page_by_path( "contact" );   //Contactの固定ページのスラッグを$get_page_idに代入
