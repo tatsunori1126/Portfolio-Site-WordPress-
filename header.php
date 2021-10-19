@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="岡山県でWeb制作をしています。自身のWebサイトが作りたいという方の手助けができれば幸いです。気軽にご相談下さい。">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
     <!-- ここからアドミンバーが表示されている時だけサイドバーを32px下に下げるコード（スマホ、タブレットの画面の時に閉じるボタンがアドミンバーと被ってしまうため） -->
