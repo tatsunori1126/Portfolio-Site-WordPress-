@@ -1,26 +1,13 @@
 @charset "UTF-8";
-$pc: 1025px;    //パソコン
-$tab: 600px;    //タブレット
+@use "../../foundation/mixin";
 
-// パソコン
-@mixin pc {
-    @media (min-width: ($pc)) {     //画面サイズが1025px以上の場合、pc画面になる
-        @content;
-    }
-}
-// タブレット
-@mixin tab {
-    @media (min-width: ($tab)) {    //画面サイズが600px〜1024pxの間の場合、タブレット画面になる
-        @content;
-    }
-}
 $font-color: #333333;
 .p-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    @include pc {
+    @include mixin.pc {
         position: fixed;
         align-items: center;
         justify-content: space-between;
@@ -29,7 +16,7 @@ $font-color: #333333;
     &__title {
         font-size: 16px;
         margin-left: 30px;
-        @include pc {
+        @include mixin.pc {
             font-size: 30px;
         }
         a {
@@ -46,10 +33,10 @@ $font-color: #333333;
         background-color: #FDFDFD;
         padding-left: 20px;
         z-index: 1000;
-        @include tab {
+        @include mixin.tab {
             width: 45%;
         }
-        @include pc {
+        @include mixin.pc {
             position: static;
             height: 100%;
             width: auto;
@@ -59,7 +46,7 @@ $font-color: #333333;
         }
         &__list {
             padding-top: 100px;
-            @include pc {
+            @include mixin.pc {
                 height: 64px;
                 display: flex;
                 align-items: center;
@@ -71,7 +58,7 @@ $font-color: #333333;
                 line-height: 24px;
                 margin-bottom: 20px;
                 border-bottom: 1px solid #333333;
-                @include pc {
+                @include mixin.pc {
                     margin-bottom: 0;
                     border-bottom: none;
                 }
@@ -91,7 +78,7 @@ $font-color: #333333;
 
 .is-open {
     left: 45%;
-    @include tab {
+    @include mixin.tab {
         left: 55%;
     }
 }

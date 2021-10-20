@@ -1,19 +1,5 @@
 @charset "UTF-8";
-$pc: 1025px;    //パソコン
-$tab: 600px;    //タブレット
-
-// パソコン
-@mixin pc {
-    @media (min-width: ($pc)) {     //画面サイズが1025px以上の場合、pc画面になる
-        @content;
-    }
-}
-// タブレット
-@mixin tab {
-    @media (min-width: ($tab)) {    //画面サイズが600px〜1024pxの間の場合、タブレット画面になる
-        @content;
-    }
-}
+@use "../../foundation/mixin";
 
 /*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
 .p-hamburger-btn {
@@ -25,7 +11,7 @@ $tab: 600px;    //タブレット
     border-radius: 5px;
     margin-right: 10px;
     z-index: 10;
-    @include pc {
+    @include mixin.pc {
         display: none;
     }
 }

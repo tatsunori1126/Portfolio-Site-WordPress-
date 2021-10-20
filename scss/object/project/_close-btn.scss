@@ -1,19 +1,5 @@
 @charset "UTF-8";
-$pc: 1025px;    //パソコン
-$tab: 600px;    //タブレット
-
-// パソコン
-@mixin pc {
-    @media (min-width: ($pc)) {     //画面サイズが1025px以上の場合、pc画面になる
-        @content;
-    }
-}
-// タブレット
-@mixin tab {
-    @media (min-width: ($tab)) {    //画面サイズが600px〜1024pxの間の場合、タブレット画面になる
-        @content;
-    }
-}
+@use "../../foundation/mixin";
 
 .close-btn {
     display: block;
@@ -29,7 +15,7 @@ $tab: 600px;    //タブレット
     top: 22px;
     margin-right: 35px;
     float: right;
-    @include pc {
+    @include mixin.pc {
         display: none;
     }
 }    
@@ -43,7 +29,7 @@ $tab: 600px;    //タブレット
     background: inherit;
     border-radius: inherit;
     transform: rotate(90deg);
-    @include pc {
+    @include mixin.pc {
         display: none;
     }
 }

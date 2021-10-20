@@ -1,33 +1,20 @@
 @charset "UTF-8";
-$pc: 1025px;    //パソコン
-$tab: 600px;    //タブレット
+@use "../../foundation/mixin";
 
-// パソコン
-@mixin pc {
-    @media (min-width: ($pc)) {     //画面サイズが1025px以上の場合、pc画面になる
-        @content;
-    }
-}
-// タブレット
-@mixin tab {
-    @media (min-width: ($tab)) {    //画面サイズが600px〜1024pxの間の場合、タブレット画面になる
-        @content;
-    }
-}
 .p-top-main {
     margin: 0 30px 40px;
     height: 100%;
-    @include tab {
+    @include mixin.tab {
         margin: 0 60px 40px;
     }
-    @include pc {
+    @include mixin.pc {
         margin: 0 190px 90px;
     }
     &__about {
-        @include tab {
+        @include mixin.tab {
             margin-bottom: 80px;
         }
-        @include pc {
+        @include mixin.pc {
             margin-bottom: 0;
         }
         h2 {
@@ -35,7 +22,7 @@ $tab: 600px;    //タブレット
         }
         &-block {
             display: inherit;
-            @include pc {
+            @include mixin.pc {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -45,10 +32,10 @@ $tab: 600px;    //タブレット
                 font-size: 14px;
                 width: 100%;
                 margin-bottom: 20px;
-                @include tab {
+                @include mixin.tab {
                     font-size: 16px;
                 }
-                @include pc {
+                @include mixin.pc {
                     width: 70%;
                     margin-bottom: 0;
                     margin-right: 50px;
@@ -58,10 +45,10 @@ $tab: 600px;    //タブレット
                 width: 100%;
                 height: 350px;
                 object-fit: cover;
-                @include tab {
+                @include mixin.tab {
                     height: 400px;
                 }
-                @include pc {
+                @include mixin.pc {
                     width: 40%;
                 }
             }
@@ -69,10 +56,10 @@ $tab: 600px;    //タブレット
     }
     &__skills {
         margin-bottom: 0;
-        @include tab {
+        @include mixin.tab {
             margin-bottom: 80px;
         }
-        @include pc {
+        @include mixin.pc {
             margin-bottom: 120px;
         }
         h2 {
@@ -82,17 +69,17 @@ $tab: 600px;    //タブレット
             display: inherit;
             width: 100%;
             margin: 0 auto;
-            @include tab {
+            @include mixin.tab {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
             }
-            @include pc {
+            @include mixin.pc {
                 grid-template-columns: 1fr 1fr 1fr 1fr;
             }
             .p-top-main__skills-single-block {
                 text-align: center;
                 margin-bottom: 30px;
-                @include pc {
+                @include mixin.pc {
                     margin-bottom: 60px;
                 }
                 img {
@@ -100,7 +87,7 @@ $tab: 600px;    //タブレット
                 }
                 p {
                     margin-top: 5px;
-                    @include pc {
+                    @include mixin.pc {
                         margin-top: 15px;
                     }
                 }
@@ -108,7 +95,7 @@ $tab: 600px;    //タブレット
         }
         &-text {
             font-size: 14px;
-            @include tab {
+            @include mixin.tab {
                 font-size: 16px;
             }
         }
@@ -116,10 +103,10 @@ $tab: 600px;    //タブレット
     &__works {
         width: 100%;
         margin: 0 0 50px 0;
-        @include tab {
+        @include mixin.tab {
             margin-bottom: 80px;
         }
-        @include pc {
+        @include mixin.pc {
             margin: 0 auto 120px;
         }
         h2 {
@@ -127,7 +114,7 @@ $tab: 600px;    //タブレット
         }
         .p-top-main__works-box {
             display: inherit;
-            @include pc {
+            @include mixin.pc {
                 display: flex;
                 flex-wrap: wrap;
             }
@@ -135,7 +122,7 @@ $tab: 600px;    //タブレット
                 width: 100%;
                 margin: 0 auto;
                 margin-bottom: 30px;
-                @include pc {
+                @include mixin.pc {
                     width: 45%;
                     margin-bottom: 50px;
                 }
@@ -166,13 +153,13 @@ $tab: 600px;    //タブレット
                     align-items: center;
                     margin: 0 auto;
                     width: 100%;
-                    @include pc {
+                    @include mixin.pc {
                         width:100%;
                     } 
                     .p-top-main__works-text-title {
                         white-space: nowrap;
                         font-size: 18px;
-                        @include tab {
+                        @include mixin.tab {
                             font-size: 24px;
                         }
                     }  
@@ -181,7 +168,7 @@ $tab: 600px;    //タブレット
                     text-align: center;
                     margin-bottom: 60px;
                     margin-top: 20px;
-                    @include pc {
+                    @include mixin.pc {
                         margin-bottom: 30px;
                     }
                     a {
@@ -191,7 +178,7 @@ $tab: 600px;    //タブレット
                         transition: .3s all;
                         padding: 16px 40px;
                         border-radius: 40px;
-                        @include tab {
+                        @include mixin.tab {
                             padding: 20px 50px;
                             border-radius: 50px;
                         }
@@ -208,10 +195,10 @@ $tab: 600px;    //タブレット
     }
     &__price {
         margin-bottom: 50px;
-        @include tab {
+        @include mixin.tab {
             margin-bottom: 80px;
         }
-        @include pc {
+        @include mixin.pc {
             margin-bottom: 120px;
         }
         h2 {
@@ -226,7 +213,7 @@ $tab: 600px;    //タブレット
             line-height: 4;
             border-bottom: 1px solid #000000;
             font-size: 14px;
-            @include tab {
+            @include mixin.tab {
                 font-size: 16px;
             }
         }
@@ -237,7 +224,7 @@ $tab: 600px;    //タブレット
     }
     &__contact {
         font-size: 14px;
-        @include tab {
+        @include mixin.tab {
             font-size: 16px;
         }
         h2 {
@@ -248,7 +235,7 @@ $tab: 600px;    //タブレット
 .p-top-main__title-logo {
     font-size: 24px;
     margin: 30px 0 20px 0;
-    @include pc {
+    @include mixin.pc {
         font-size: 40px;
         margin-bottom: 50px;
     }

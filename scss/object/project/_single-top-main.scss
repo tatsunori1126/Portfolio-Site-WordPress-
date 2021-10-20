@@ -1,25 +1,11 @@
 @charset "UTF-8";
-$pc: 1025px;    //パソコン
-$tab: 600px;    //タブレット
-
-// パソコン
-@mixin pc {
-    @media (min-width: ($pc)) {     //画面サイズが1025px以上の場合、pc画面になる
-        @content;
-    }
-}
-// タブレット
-@mixin tab {
-    @media (min-width: ($tab)) {    //画面サイズが600px〜1024pxの間の場合、タブレット画面になる
-        @content;
-    }
-}
+@use "../../foundation/mixin";
 .p-single-main {
     &__title {
         width: 100%;
         margin: 0 auto;
         font-size: 16px;
-        @include pc {
+        @include mixin.pc {
             font-size: 36px;
             margin-bottom: 10px;
             color: #333333;
@@ -37,16 +23,16 @@ $tab: 600px;    //タブレット
     .yarpp {
         text-align: center;
         margin-top: 60px;
-        @include tab {
+        @include mixin.tab {
             margin-top: 80px;
         }
-        @include pc {
+        @include mixin.pc {
             margin-top: 120px;
         }
         h3 {
             font-size: 28px;
             margin-bottom: 30px;
-            @include pc {
+            @include mixin.pc {
                 margin-bottom: 0;
             }
         }
@@ -68,7 +54,7 @@ $tab: 600px;    //タブレット
                     width: 100%;
                     height: auto;
                     margin: 0 auto 20px;
-                    @include pc {
+                    @include mixin.pc {
                         padding-top: 50px;
                     }
                 }
@@ -84,10 +70,10 @@ $tab: 600px;    //タブレット
                     margin: 0 auto;
                     white-space: nowrap;
                     width: 100%;
-                    @include tab {
+                    @include mixin.tab {
                         font-size: 20px;
                     }
-                    @include pc {
+                    @include mixin.pc {
                         font-size: 24px;
                     }
                 }

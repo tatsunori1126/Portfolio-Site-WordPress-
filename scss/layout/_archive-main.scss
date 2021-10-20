@@ -1,28 +1,14 @@
 @charset "UTF-8";
-$pc: 1025px;    //パソコン
-$tab: 600px;    //タブレット
-
-// パソコン
-@mixin pc {
-    @media (min-width: ($pc)) {     //画面サイズが1025px以上の場合、pc画面になる
-        @content;
-    }
-}
-// タブレット
-@mixin tab {
-    @media (min-width: ($tab)) {    //画面サイズが600px〜1024pxの間の場合、タブレット画面になる
-        @content;
-    }
-}
+@use "../foundation/mixin";
 
 .l-archive__main {
     width: 80%;
     margin: 0 auto;
     padding-top: 30px;
-    @include tab {
+    @include mixin.tab {
         padding-top: 60px;
     }
-    @include pc {
+    @include mixin.pc {
         padding-top: 120px;
     }
 }

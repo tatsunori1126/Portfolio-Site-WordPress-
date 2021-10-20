@@ -1,19 +1,6 @@
 @charset "UTF-8";
-$pc: 1025px;    //パソコン
-$tab: 600px;    //タブレット
+@use "../../foundation/mixin";
 
-// パソコン
-@mixin pc {
-    @media (min-width: ($pc)) {     //画面サイズが1025px以上の場合、pc画面になる
-        @content;
-    }
-}
-// タブレット
-@mixin tab {
-    @media (min-width: ($tab)) {    //画面サイズが600px〜1024pxの間の場合、タブレット画面になる
-        @content;
-    }
-}
 $tv-color: #FFFFFF;
 .p-main {
     &__top-visual {
@@ -24,10 +11,10 @@ $tv-color: #FFFFFF;
         background-size: cover;
         margin-bottom: 20px;
         height: calc(100vh - 94px);
-        @include tab {
+        @include mixin.tab {
             height: calc(100vh - 80px);
         }
-        @include pc {
+        @include mixin.pc {
             padding-top: 64px;
             height: calc(100vh - 32px);
         }
@@ -46,7 +33,7 @@ $tv-color: #FFFFFF;
             width: 100%;
             margin: 0 auto;
             height: calc(100vh - 48px);
-            @include pc {
+            @include mixin.pc {
                 height: calc(100vh - 64px);
             }
             .p-main__title-block {
@@ -60,11 +47,11 @@ $tv-color: #FFFFFF;
                     font-size: 18px;
                     letter-spacing: 3px;
                     position: relative;
-                    @include tab {
+                    @include mixin.tab {
                         font-size: 24px;
                         letter-spacing: 5px;
                     }
-                    @include pc {
+                    @include mixin.pc {
                         margin-bottom: 15px;
                         font-size: 36px;
                         letter-spacing: 8px;
@@ -73,11 +60,11 @@ $tv-color: #FFFFFF;
                 .p-main__top-text {
                     font-size: 14px;
                     font-family: 'Caveat', cursive;
-                    @include tab {
+                    @include mixin.tab {
                         font-size: 18px;
                         letter-spacing: 2px;
                     }
-                    @include pc {
+                    @include mixin.pc {
                         font-size: 24px;
                         letter-spacing: 3px;
                     }

@@ -1,29 +1,15 @@
 @charset "UTF-8";
-$pc: 1025px;    //パソコン
-$tab: 600px;    //タブレット
-
-// パソコン
-@mixin pc {
-    @media (min-width: ($pc)) {     //画面サイズが1025px以上の場合、pc画面になる
-        @content;
-    }
-}
-// タブレット
-@mixin tab {
-    @media (min-width: ($tab)) {    //画面サイズが600px〜1024pxの間の場合、タブレット画面になる
-        @content;
-    }
-}
+@use "../../foundation/mixin";
 
 .p-archive__main-title-logo {
     width: 80%;
     margin: 0 auto;
     font-size: 28px;
-    @include tab {
+    @include mixin.tab {
         font-size: 30px;
         padding-top: 60px;
     }
-    @include pc {
+    @include mixin.pc {
         padding-top: 120px;
         font-size: 36px;
         padding-left: 30px;
@@ -32,14 +18,14 @@ $tab: 600px;    //タブレット
 .p-archive__main {
     width: 80%;
     margin: 0 auto;
-    @include pc {
+    @include mixin.pc {
         display: flex;
         flex-wrap: wrap;
     }
     &-box {
         margin: 0 auto 30px;
         width: 100%;
-        @include pc {
+        @include mixin.pc {
             width: 45%;
         }
         .p-archive__main__img-block {
@@ -69,14 +55,14 @@ $tab: 600px;    //タブレット
             white-space: nowrap;
             margin: 0 auto 20px;
             font-size: 16px;
-            @include tab {
+            @include mixin.tab {
                 font-size: 24px;
             }
         }
         .p-archive-main__text-block {
             text-align: center;
             margin-bottom: 60px;
-            @include pc {
+            @include mixin.pc {
                 margin-bottom: 30px;
             }
             a {
@@ -86,7 +72,7 @@ $tab: 600px;    //タブレット
                 transition: .3s all;
                 padding: 16px 40px;
                 border-radius: 40px;
-                @include tab {
+                @include mixin.tab {
                     padding: 20px 50px;
                     border-radius: 50px;
                 }

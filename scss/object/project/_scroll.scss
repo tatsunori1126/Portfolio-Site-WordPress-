@@ -1,25 +1,12 @@
 @charset "UTF-8";
-$pc: 1025px;    //パソコン
-$tab: 600px;    //タブレット
+@use "../../foundation/mixin";
 
-// パソコン
-@mixin pc {
-    @media (min-width: ($pc)) {     //画面サイズが1025px以上の場合、pc画面になる
-        @content;
-    }
-}
-// タブレット
-@mixin tab {
-    @media (min-width: ($tab)) {    //画面サイズが600px〜1024pxの間の場合、タブレット画面になる
-        @content;
-    }
-}
 .scroll {
     display: flex;
     justify-content: center;
     padding-top: 70px;
     position: relative;
-    @include pc {
+    @include mixin.pc {
         margin-bottom: 50px;
     }
 }
