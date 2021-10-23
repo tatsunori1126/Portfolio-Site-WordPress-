@@ -44,7 +44,10 @@
         if(is_home()) {
         ?>
         <nav class="p-header-nav">
-            <span class="close-btn" id="is-close"></span>
+            <button type="close-button" class="close-btn" id="is-close">
+                <span class="close-btn-line"></span>
+            </button>
+            <!-- <span class="close-btn" id="is-close"></span> -->
             <ul class="p-header-nav__list" id="page-link">
                 <li class="p-header-nav__list-title"><a href="#">Home</a></li>
                 <li class="p-header-nav__list-title"><a href="#aboutme">AboutMe</a></li>
