@@ -61,7 +61,9 @@
         } else {
         ?>
         <nav class="p-single-header-nav">
-            <span class="close-btn" id="is-close"></span>
+            <button type="close-button" class="close-btn" id="is-close">
+                <span class="close-btn-line"></span>
+            </button>
             <ul class="p-single-header-nav__list">    
                 <?php
                 // カスタムメニューの「メニューの位置」を'side'にしているのでその内容をサイドバーに表示
