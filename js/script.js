@@ -57,4 +57,24 @@ jQuery(function() {
             return false;
         }
     });
+
+    jQuery('#page-link a[href*="#"]').click(function () {
+        if(window.matchMedia('(min-width: 1025px)').matches) {
+            let elmHash = jQuery(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
+            let pos = jQuery(elmHash).offset().top-80;//idの上部の距離からHeaderの高さを引いた値を取得
+            jQuery('body,html').animate({scrollTop: pos}, 800); //取得した位置にスクロール。800の数値が大きくなるほどゆっくりスクロール
+            return false;
+        } else {
+            let elmHash = jQuery(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
+            let pos = jQuery(elmHash).offset().top-30;//idの上部の距離を取得
+            jQuery('body,html').animate({scrollTop: pos}, 800); //取得した位置にスクロール。800の数値が大きくなるほどゆっくりスクロール
+            return false;
+        }
+    });
+    jQuery('#home').click(function () {
+        jQuery('body,html').animate({
+            scrollTop: 0
+        }, 800);    //スムーススクロールの速度
+        return false;
+    });
 });

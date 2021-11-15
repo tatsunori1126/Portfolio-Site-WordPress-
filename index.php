@@ -127,7 +127,7 @@
                     <p class="p-top-main__price-item">サーバーへのデプロイ</p>
                     <p class="p-top-main__price-amount">¥11,000〜</p>
                 </div>
-                <p class="caution-text">※料金はあくまで目安になります。<br>内容によって変動しますのでまずは気軽にご相談下さい。<br>尚、料金は全て税込価格となっております。
+                <p class="caution-text">※料金はあくまで目安になります。<br>内容によって変動しますのでまずは気軽にご相談下さい。<br>尚、料金は全て税込価格となっております。</p>
             </section>
             <?php
                 $get_page_id = get_page_by_path( "contact" );   //Contactの固定ページのスラッグを$get_page_idに代入

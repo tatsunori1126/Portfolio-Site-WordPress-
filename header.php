@@ -49,7 +49,7 @@
             </button>
             <!-- <span class="close-btn" id="is-close"></span> -->
             <ul class="p-header-nav__list" id="page-link">
-                <li class="p-header-nav__list-title"><a href="#">Home</a></li>
+                <li class="p-header-nav__list-title"><a id="home" href="">Home</a></li>
                 <li class="p-header-nav__list-title"><a href="#aboutme">AboutMe</a></li>
                 <li class="p-header-nav__list-title"><a href="#skills">Skills</a></li>
                 <li class="p-header-nav__list-title"><a href="#works">Works</a></li>
