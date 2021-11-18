@@ -96,6 +96,7 @@ body {
   width: 100%;
   margin: 0;
   font-family: "M PLUS 1p", sans-serif;
+  overflow-wrap: break-word;
 }
 body.is-fixed {
   overflow: hidden;
